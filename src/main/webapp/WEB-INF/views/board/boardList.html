@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+작성자 : <a th:text="${board.userId}"/><br>
+제목 : <a th:text="${board.title}"/><br>
+내용 : <a th:text="${board.content}"/><br>
+작성일시 : <a th:text="${board.createdAt}"/><br>
+수정자 : <a th:text="${board.modifier}"/><br>
+수정일시 : <a th:text="${board.modifyDate}"/><br>
+<ul th:each="commentList : ${commentList}" value="댓글">
+   <li><a th:text="${commentList.writer}"/> : <a th:text="${commentList.comments}"/><br></li>
+</ul>
+<form method="post" th:action="@{|/board/${board.boardId}/comment|}">
+    댓글달기 : <input type="text" name="comment" /><input type="submit" th:onclick="|location.href='@{|/board/${board.boardId}/board|}'|"/>
+</form>
+<a href="/board">게시판 가기</a>
+</body>
+</html>

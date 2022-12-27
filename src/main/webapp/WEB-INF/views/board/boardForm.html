@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>board</title>
+    <style>
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #3b3b3b;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+    <!-- 내부 js -->
+    <script>
+        window.onload = function() {
+            console.log("");
+            console.log("[window onload] : [start]");
+            console.log("");
+        };
+    </script>
+
+</head>
+<body>
+<input type="button" value="글쓰기" name="insert" th:onclick="|location.href='@{/board/register}'|"/>
+<table align = "center">
+    <tr height="100", th:align="center">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>수정자</th>
+        <th>작성일시</th>
+        <th>댓글갯수</th>
+        <th>수정/삭제</th>
+    </tr>
+    <tr th:each="boards : ${boards}" >
+        <td><a th:text="${boards.boardId}"/></td>
+        <td><a th:href="@{|/board/${boards.boardId}|}" th:text="${boards.title}"/></td>
+        <td><a th:text="${boards.userId}"/></td>
+        <td><a th:text="${boards.modifier}"/></td>
+        <td><a th:text="${boards.createdAt}"/></td>
+        <td><a th:text="${boards.commentCnt}"/></td>
+
+        <td><input type="button" value="수정" name="modify" th:onclick="|location.href='@{|/board/${boards.boardId}/modify|}'|"/>
+        <input type="button" value="삭제" name="delete" th:onclick="|location.href='@{|/board/${boards.boardId}/delete|}'|"/>
+        </td>
+    </tr>
+</table>
+    <input type="button" value="이전" name="before" th:onclick="|location.href='@{/board/before}'|"/>
+    <input type="button" value="다음" name="after" th:onclick="|location.href='@{/board/after}'|"/>
+
+</body>
+</html>

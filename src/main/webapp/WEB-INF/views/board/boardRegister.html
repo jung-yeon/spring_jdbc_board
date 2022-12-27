@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 등록</title>
+</head>
+<body>
+<!--enctype="multipart/form-data"-->
+<form method="post" action="/board/register">
+    제목 : <input type="text" name="title" /><br />
+    내용 : <textarea name="content" rows="10" cols="80"></textarea><br />
+    <input type="submit" value="글쓰기" th:onclick="|location.href='@{/board}'|" />
+</form>
+</body>
+</html>

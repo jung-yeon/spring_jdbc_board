@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <script th:inline="javascript">
+        const message = [[ ${msg} ]];
+        const url = [[ ${url} ]];
+        alert(message);
+        location.href = url;
+    </script>
+
+</body>
+</html>

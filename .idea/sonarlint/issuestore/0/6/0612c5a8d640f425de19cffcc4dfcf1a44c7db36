@@ -1,0 +1,18 @@
+
+b
+java:S1192P"GDefine a constant instead of duplicating this literal "/login" 3 times.(²Ô·¬þÿÿÿÿ
+\
+java:S1192Q"FDefine a constant instead of duplicating this literal "alert" 3 times.(‘õà’
+a
+java:S2789A"FEnsure this "Optional" could never be null and remove this null-check.(ˆ«ÂÅüÿÿÿÿ
+k
+java:S3655$"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(†ë‘¨üÿÿÿÿ
+c
+java:S3655B"HCall "user.isPresent()" or "!user.isEmpty()" before accessing the value.(µì«Çÿÿÿÿÿ
+q
+java:S2159$"VRemove this call to "equals"; comparisons between unrelated types always return false.(†ë‘¨üÿÿÿÿ
+C	java:S108$")Either remove or fill this block of code.(†ë‘¨üÿÿÿÿ
+s
+java:S2159M"VRemove this call to "equals"; comparisons between unrelated types always return false.(À×¡”8íè¤ÓË0
+m
+java:S1128"KRemove this unused import 'com.nhnacademy.jdbc.board.user.domain.UserType'.(ïÏÏ®úÿÿÿÿ8Ê¾²ÓË0

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.jdbc.board.board.mapper.CommentMapper">
+
+    <select id="selectComment" resultType="com.nhnacademy.jdbc.board.board.domain.Comment" >
+        select *
+        from Comments
+        where boardId = #{boardId}
+    </select>
+
+
+    <select id="selectComments" resultType="com.nhnacademy.jdbc.board.board.domain.Comment">
+        select *
+        from Comments
+    </select>
+
+    <insert id="insertComment">
+        insert
+        into Comments(boardId,writer, comments)
+        values ( #{boardId},#{writer}, #{comments})
+    </insert>
+
+    <delete id="deleteById">
+        delete
+        from Comments
+        where commentId = #{commentId}
+    </delete>
+    <delete id="deleteByboardId">
+        delete
+        from Comments
+        where boardId = #{boardId}
+    </delete>
+
+</mapper>

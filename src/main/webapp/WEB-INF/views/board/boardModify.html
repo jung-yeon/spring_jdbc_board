@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modify</title>
+</head>
+<body>
+<body>
+<form method="post" th:action="@{|/board/${board.boardId}/modify|}">
+    내용 : <textarea name="content" th:value="${board.content}" th:text="${board.content}" rows="10" cols="80"></textarea><br />
+    <input type="submit" value="수정하기" />
+
+</form>
+</body>
+</html>
